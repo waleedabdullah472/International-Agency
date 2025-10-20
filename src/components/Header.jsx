@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logo from "../assets/logo.png"; // Replace with your logo path
+import logo from "../assets/Logo.png"; // Replace with your logo path
 
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
