@@ -29,7 +29,7 @@ const Footer = () => {
                             <div className="logo-carousel-row row-1">
                                 <div className="carousel-track">
                                     {/* First row of logos */}
-                                    <img src="/public/f.webp" alt="Client Logo" />
+                                    <img src="f.webp" alt="Client Logo" />
                                     <img src="/public/x.webp" alt="Client Logo" />
                                     <img src="/public/i.webp" alt="Client Logo" />
                                     <img src="/public/l.webp" alt="Client Logo" />
@@ -75,16 +75,16 @@ const Footer = () => {
                         
                     </div>
                     <div className="card card-2">
-                        <img src="/public/f.webp" alt="Service 2" />
+                        <img src="f.webp" alt="Service 2" />
                     </div>
                     <div className="card card-3">
                         <img src="x.webp" alt="Service 3" />
                     </div>
                     <div className="card card-4">
-                        <img src="/public/l.webp" alt="Service 4" />
+                        <img src="l.webp" alt="Service 4" />
                     </div>
                     <div className="card card-5">
-                        <img src="/public/y.webp" alt="Service 5" />
+                        <img src="y.webp" alt="Service 5" />
                     </div>
                 </div>
             </div>
