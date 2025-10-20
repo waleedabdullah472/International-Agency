@@ -30,36 +30,36 @@ const Footer = () => {
                                 <div className="carousel-track">
                                     {/* First row of logos */}
                                     <img src="f.webp" alt="Client Logo" />
-                                    <img src="/public/x.webp" alt="Client Logo" />
-                                    <img src="/public/i.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/x.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
+                                    <img src="x.webp" alt="Client Logo" />
+                                    <img src="i.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="x.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
                                     {/* Duplicate for seamless loop */}
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
-                                    <img src="/public/x.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/f.webp" alt="Client Logo" />
-                                    <img src="/public/i.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
+                                    <img src="x.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="f.webp" alt="Client Logo" />
+                                    <img src="i.webp" alt="Client Logo" />
                                 </div>
                             </div>
                             <div className="logo-carousel-row row-2">
                                 <div className="carousel-track">
                                     {/* Second row of logos */}
-                                    <img src="/public/y.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
-                                    <img src="/public/y.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
+                                    <img src="y.webp" alt="Client Logo" />
                                     {/* Duplicate for seamless loop */}
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
-                                    <img src="/public/l.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
+                                    <img src="l.webp" alt="Client Logo" />
                                 </div>
                             </div>
                         </div>
