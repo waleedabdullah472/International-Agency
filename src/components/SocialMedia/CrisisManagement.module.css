@@ -1,0 +1,28 @@
+/* src/components/SocialMedia/CrisisManagement.module.css */
+.serviceSection {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #d0021b; /* Unique color */
+  background-color: #fff4f4;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  color: #d0021b; /* Matches border */
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.featureList {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  color: #666;
+}
