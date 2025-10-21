@@ -1,28 +1,525 @@
-/* src/components/SocialMedia/StrategyConsulting.module.css */
+/* StrategyConsulting.module.css */
+
 .serviceSection {
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #4a90e2; /* Unique color */
-  background-color: #f4f9ff;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Content Styles */
+.leftContent {
+  padding-right: 20px;
 }
 
 .sectionTitle {
-  color: #4a90e2; /* Matches border */
-  margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUpFade 1s ease-out 0.3s forwards;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #000;
+  border-radius: 2px;
+  transform: scaleX(0);
+  animation: expandWidth 0.8s ease-out 1s forwards;
 }
 
 .description {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 40px;
+  text-align: justify;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1s ease-out 0.6s forwards;
 }
 
-.featureList {
-  list-style: disc;
-  padding-left: 20px;
-  margin-top: 10px;
+/* CTA Button */
+.ctaButton {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1s ease-out 0.9s forwards;
+}
+
+.ctaButton:hover {
+  background: #333;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 7 Images Row - No containers, just images */
+.imagesRow {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.smallImageContainer {
+  flex: 1;
+  min-width: 60px;
+  max-width: 80px;
+  border-radius: 20px;
+  overflow: visible;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 0.8s ease-out forwards;
+}
+
+/* Individual animation delays for small images */
+.smallImageContainer:nth-child(1) { animation-delay: 1.2s; }
+.smallImageContainer:nth-child(2) { animation-delay: 1.3s; }
+.smallImageContainer:nth-child(3) { animation-delay: 1.4s; }
+.smallImageContainer:nth-child(4) { animation-delay: 1.5s; }
+.smallImageContainer:nth-child(5) { animation-delay: 1.6s; }
+.smallImageContainer:nth-child(6) { animation-delay: 1.7s; }
+.smallImageContainer:nth-child(7) { animation-delay: 1.8s; }
+
+.smallImageContainer:hover {
+  transform: translateY(-10px) scale(1.2);
+  z-index: 10;
+}
+
+.smallImage {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+}
+
+.smallImageContainer:hover .smallImage {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: #000;
+  transform: scale(1.1);
+}
+
+/* Popup effect for small images */
+.smallImageContainer::after {
+  content: attr(data-platform);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background: #000;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.smallImageContainer:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Recognition Section */
+.recognitionSection {
+  margin-top: 40px;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1s ease-out 2s forwards;
+}
+
+.recognizedBy {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reviewPlatforms {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.platform {
+  text-align: center;
+  padding: 15px;
+  min-width: 150px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFade 0.8s ease-out forwards;
+}
+
+.platform:nth-child(1) { animation-delay: 2.2s; }
+.platform:nth-child(2) { animation-delay: 2.4s; }
+
+.platformHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.platformName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.reviewCount {
+  font-size: 0.9rem;
   color: #666;
+  font-weight: 500;
+}
+
+/* Right Content - Full Screen Image Effect */
+.rightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 600px;
+}
+
+.singleImageContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8) rotate(-5deg);
+  animation: zoomInRotate 1.2s ease-out 0.5s forwards;
+}
+
+.singleImageContainer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.3);
+}
+
+.singleImageContainer.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  border-radius: 0;
+  cursor: zoom-out;
+  animation: fullscreenExpand 0.5s ease-out forwards;
+}
+
+.bigImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.singleImageContainer:hover .bigImage {
+  transform: scale(1.1);
+}
+
+.singleImageContainer.fullscreen .bigImage {
+  border-radius: 0;
+  transform: scale(1);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Scroll-triggered animations */
+.scrollAnimation {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scrollAnimation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes zoomInRotate {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fullscreenExpand {
+  from {
+    transform: scale(1);
+    border-radius: 30px;
+  }
+  to {
+    transform: scale(1);
+    border-radius: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Floating animation for images */
+.smallImageContainer {
+  animation: float 6s ease-in-out infinite;
+}
+
+.smallImageContainer:nth-child(2) { animation-delay: 0.5s; }
+.smallImageContainer:nth-child(3) { animation-delay: 1s; }
+.smallImageContainer:nth-child(4) { animation-delay: 1.5s; }
+.smallImageContainer:nth-child(5) { animation-delay: 2s; }
+.smallImageContainer:nth-child(6) { animation-delay: 2.5s; }
+.smallImageContainer:nth-child(7) { animation-delay: 3s; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    gap: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .rightContent {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceSection {
+    padding: 60px 0;
+  }
+  
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    grid-template-areas: 
+      "rightContent"
+      "leftContent";
+  }
+  
+  .leftContent {
+    padding-right: 0;
+    text-align: center;
+    grid-area: leftContent;
+  }
+  
+  .rightContent {
+    grid-area: rightContent;
+    height: 400px;
+  }
+  
+  .sectionTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .description {
+    text-align: center;
+  }
+  
+  .imagesRow {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .smallImageContainer {
+    min-width: 50px;
+    max-width: 60px;
+  }
+  
+  .smallImage {
+    height: 50px;
+  }
+  
+  .reviewPlatforms {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .platform {
+    min-width: 200px;
+  }
+  
+  .smallImageContainer:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .recognitionSection {
+    padding: 20px;
+  }
+  
+  .ctaButton {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .rightContent {
+    height: 300px;
+  }
+  
+  .singleImageContainer {
+    border-radius: 20px;
+  }
+  
+  .bigImage {
+    border-radius: 20px;
+  }
+  
+  .imagesRow {
+    gap: 8px;
+  }
+  
+  .smallImageContainer {
+    min-width: 45px;
+    max-width: 55px;
+  }
+  
+  .smallImage {
+    height: 45px;
+    border-radius: 12px;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.serviceSection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.serviceSection::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.serviceSection::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+.serviceSection::-webkit-scrollbar-thumb:hover {
+  background: #333;
 }
