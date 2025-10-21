@@ -1,37 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './StrategyConsulting.module.css';
 
 const StrategyConsulting = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const [animated, setAnimated] = useState(false);
-
-  const platforms = [
-    "Facebook", "Instagram", "LinkedIn", 
-    "Twitter", "Snapchat", "TikTok", "YouTube"
-  ];
-
-  const toggleFullscreen = () => {
-    setIsFullscreen(!isFullscreen);
-  };
+  const imageRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Scroll animation trigger
-    const handleScroll = () => {
-      const elements = document.querySelectorAll(`.${styles.scrollAnimation}`);
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add(styles.animate);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
         }
-      });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
     };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Trigger on initial load
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -41,36 +37,42 @@ const StrategyConsulting = () => {
           
           {/* Left Content */}
           <div className={styles.leftContent}>
-            <h3 className={`${styles.sectionTitle} ${styles.scrollAnimation}`}>
-              Social Media Management Agency
-            </h3>
-            <p className={`${styles.description} ${styles.scrollAnimation}`}>
+            <h3 className={styles.sectionTitle}>Social Media Management Agency</h3>
+            <p className={styles.description}>
               Providing Result Proven Facebook, Instagram, Linkedin, Twitter, Snapchat, TikTok, and YouTube Management and Marketing Services. Our Social Media Management services are provided by a team of certified and well-trained professionals.
             </p>
             
-            <button className={`${styles.ctaButton} ${styles.scrollAnimation}`}>
+            <button className={styles.ctaButton}>
               Get Started
             </button>
 
             {/* 7 Images Row */}
             <div className={styles.imagesRow}>
-              {platforms.map((platform, index) => (
-                <div 
-                  key={index}
-                  className={styles.smallImageContainer}
-                  data-platform={platform}
-                >
-                  <img 
-                    src="./f.webp" 
-                    alt={platform}
-                    className={styles.smallImage} 
-                  />
-                </div>
-              ))}
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 1" className={styles.smallImage} />
+              </div>
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 2" className={styles.smallImage} />
+              </div>
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 3" className={styles.smallImage} />
+              </div>
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 4" className={styles.smallImage} />
+              </div>
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 5" className={styles.smallImage} />
+              </div>
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 6" className={styles.smallImage} />
+              </div>
+              <div className={styles.smallImageContainer}>
+                <img src="./f.webp" alt="Social Media Service 7" className={styles.smallImage} />
+              </div>
             </div>
 
             {/* Recognition Section */}
-            <div className={`${styles.recognitionSection} ${styles.scrollAnimation}`}>
+            <div className={styles.recognitionSection}>
               <div className={styles.recognizedBy}>RECOGNIZED BY:</div>
               <div className={styles.reviewPlatforms}>
                 <div className={styles.platform}>
@@ -94,16 +96,10 @@ const StrategyConsulting = () => {
           {/* Right Content - Single Big Image */}
           <div className={styles.rightContent}>
             <div 
-              className={`${styles.singleImageContainer} ${
-                isFullscreen ? styles.fullscreen : ''
-              }`}
-              onClick={toggleFullscreen}
+              ref={imageRef}
+              className={`${styles.singleImageContainer} ${isVisible ? styles.animate : ''}`}
             >
-              <img 
-                src="./baby boy.png" 
-                alt="Social Media Management" 
-                className={styles.bigImage} 
-              />
+              <img src="./baby boy.png" alt="Social Media Management" className={styles.bigImage} />
             </div>
           </div>
 
