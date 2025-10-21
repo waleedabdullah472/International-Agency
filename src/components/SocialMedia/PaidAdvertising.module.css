@@ -1,28 +1,117 @@
-/* src/components/SocialMedia/PaidAdvertising.module.css */
-.serviceSection {
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #f5a623; /* Unique color */
-  background-color: #fffaf2;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+/* --- Main Container and Header Styling --- */
+.paidAdvertising {
+  padding: 40px 20px;
+  max-width: 1200px; /* Limits the overall width for better readability */
+  margin: 0 auto; /* Centers the whole component */
 }
 
-.sectionTitle {
-  color: #f5a623; /* Matches border */
-  margin-top: 0;
-  font-size: 1.5rem;
+.header {
+  text-align: center; /* Centers the h1 and p within the header */
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.1em;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto; /* Centers the paragraph */
+}
+
+/* --- Card Container (CSS Grid for Responsiveness) --- */
+.cardContainer {
+  display: grid;
+  /* Default: 1 column for small screens (mobile) */
+  grid-template-columns: 1fr; 
+  gap: 30px; /* Space between cards */
+}
+
+/* Tablet and larger screens (Adjust this breakpoint as needed) */
+@media (min-width: 768px) {
+  .cardContainer {
+    /* Two columns on tablets */
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+  .cardContainer {
+    /* Three columns on desktop */
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+/* --- Card Styling --- */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 25px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mainHeading {
+  font-size: 1.6em;
+  color: #007bff; /* Primary brand color for main heading */
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-align: left; /* Heading on the left side */
 }
 
 .description {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1em;
   color: #555;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.featureList {
-  list-style: disc;
-  padding-left: 20px;
-  margin-top: 10px;
-  color: #666;
+.smallHeading {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Schedule List Styling --- */
+.scheduleList {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.scheduleList li {
+  margin-bottom: 8px;
+  padding: 5px 0;
+  font-size: 0.95em;
+  color: #444;
+  border-bottom: 1px dashed #eee;
+  text-align: left;
+}
+
+.scheduleList li:last-child {
+  border-bottom: none;
+}
+
+/* Time styling to make it stand out */
+.time {
+  font-weight: bold;
+  color: #28a745; /* A distinct color for the time */
+  margin-right: 8px;
+  display: inline-block; /* Helps align the text properly */
+  min-width: 65px; /* Ensures time alignment */
 }
