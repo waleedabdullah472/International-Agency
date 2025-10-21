@@ -37,7 +37,7 @@ const StrategyConsulting = () => {
           
           {/* Left Content */}
           <div className={styles.leftContent}>
-            <h3 className={styles.sectionTitle}>Social Media Management Agency</h3>
+            <h3 className={styles.sectionTitle}>Social Media<br></br> Management Agency</h3>
             <p className={styles.description}>
               Providing Result Proven Facebook, Instagram, Linkedin, Twitter, Snapchat, TikTok, and YouTube Management and Marketing Services. Our Social Media Management services are provided by a team of certified and well-trained professionals.
             </p>
