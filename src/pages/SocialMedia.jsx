@@ -11,8 +11,7 @@ import PlatformAudits from '../components/SocialMedia/PlatformAudits';
 
 const SocialMedia = () => (
   <div>
-    <h1>Social Media Services 🚀</h1>
-    <p>Explore the 8 key areas of our social media offerings:</p>
+    
 
     <StrategyConsulting />
     <ContentCreation />
