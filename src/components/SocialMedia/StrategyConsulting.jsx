@@ -49,26 +49,24 @@ const StrategyConsulting = () => {
             {/* 7 Images Row */}
             <div className={styles.imagesRow}>
               <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 1" className={styles.smallImage} />
+                <img src="./1.webp" alt="Social Media Service 1" className={styles.smallImage} />
               </div>
               <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 2" className={styles.smallImage} />
+                <img src="./2.webp" alt="Social Media Service 2" className={styles.smallImage} />
               </div>
               <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 3" className={styles.smallImage} />
+                <img src="./3.webp" alt="Social Media Service 3" className={styles.smallImage} />
               </div>
               <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 4" className={styles.smallImage} />
+                <img src="./4.webp" alt="Social Media Service 4" className={styles.smallImage} />
               </div>
               <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 5" className={styles.smallImage} />
+                <img src="./5.webp" alt="Social Media Service 5" className={styles.smallImage} />
               </div>
               <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 6" className={styles.smallImage} />
+                <img src="./6.webp" alt="Social Media Service 6" className={styles.smallImage} />
               </div>
-              <div className={styles.smallImageContainer}>
-                <img src="./f.webp" alt="Social Media Service 7" className={styles.smallImage} />
-              </div>
+             
             </div>
 
             {/* Recognition Section */}

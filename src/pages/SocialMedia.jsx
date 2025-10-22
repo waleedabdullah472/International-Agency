@@ -8,6 +8,7 @@ import InfluencerMarketing from '../components/SocialMedia/InfluencerMarketing';
 import AnalyticsReporting from '../components/SocialMedia/AnalyticsReporting';
 import CrisisManagement from '../components/SocialMedia/CrisisManagement';
 import PlatformAudits from '../components/SocialMedia/PlatformAudits';
+import BrandAwareness from '../components/SocialMedia/BrandAwareness';
 
 const SocialMedia = () => (
   <div>
@@ -21,6 +22,7 @@ const SocialMedia = () => (
     <AnalyticsReporting />
     <CrisisManagement />
     <PlatformAudits />
+    <BrandAwareness />
   </div>
 );
 

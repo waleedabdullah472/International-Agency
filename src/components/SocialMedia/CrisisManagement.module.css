@@ -3,8 +3,10 @@
 /* --- General Section Styling --- */
 .serviceSection {
   padding: 40px 20px;
-  background-color: #f8f9fa; /* Light background for contrast */
+  background-color: #f8f9fa;
   font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
@@ -14,7 +16,7 @@
 
 .mainHeading {
   font-size: 2.5em;
-  color: #007bff; /* Digital Otters Blue */
+  color: #333;
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -27,126 +29,268 @@
   line-height: 1.6;
 }
 
-/* --- Assets Grid Layout (Responsive) --- */
+/* --- Assets Grid Layout (Enhanced Responsive) --- */
 .assetsGrid {
   display: grid;
-  /* Default: 1 column on small screens */
-  grid-template-columns: repeat(1, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr; /* Single column by default for mobile */
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* Tablet Layout (2 Columns) */
+/* Tablet */
 @media (min-width: 600px) {
   .assetsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop Layout (3 Columns - For "every row 3 tile") */
-@media (min-width: 992px) {
+/* Desktop */
+@media (min-width: 1024px) {
   .assetsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* --- Asset Card Styling --- */
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .assetsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- Asset Card Styling (Enhanced Flex Behavior) --- */
 .assetCard {
   background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 0; /* Important for flex children */
 }
 
 .assetCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Card Header (Title and Time) --- */
+/* --- Card Header (Improved Flex Layout) --- */
 .cardHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  background-color: #e9ecef;
-  border-bottom: 1px solid #dee2e6;
+  align-items: flex-start; /* Changed to flex-start for better text alignment */
+  padding: 12px 15px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+  min-height: 60px; /* Ensure consistent height */
+  box-sizing: border-box;
 }
 
 .assetTitle {
   font-weight: 600;
-  color: #343a40;
+  color: #333;
   font-size: 1em;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 70%;
+  flex: 1; /* Use flex instead of flex-grow for better compatibility */
+  margin-right: 10px;
+  word-wrap: break-word;
 }
 
 .assetTime {
   font-size: 0.85em;
-  color: #6c757d;
+  color: #888;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: right;
 }
 
-/* --- Media Placeholder Styling --- */
+/* --- Media Container Styling (Improved Aspect Ratios) --- */
 .mediaContainer {
-  height: 200px; /* Fixed height for consistent card size */
-  background-color: #ced4da;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #495057;
   position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000;
+  overflow: hidden;
+  flex-shrink: 0; /* Prevent media from shrinking */
 }
 
-.mediaIcon {
-  font-size: 3em;
-  margin-bottom: 10px;
+.actualMedia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.mediaPlaceholderText {
-  font-style: italic;
-  margin: 0;
-}
-
-/* --- Card Footer (Reactions and Favorite) --- */
+/* --- Card Footer (Enhanced Flex Layout) --- */
 .cardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 12px 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  margin-top: auto; /* This pushes footer to bottom */
+  flex-shrink: 0;
+  min-height: 50px; /* Consistent footer height */
+  box-sizing: border-box;
 }
 
 /* Left Side: Reactions */
 .reactions {
   display: flex;
   gap: 10px;
+  align-items: center;
+  flex-wrap: wrap; /* Allow reactions to wrap on very small screens */
 }
 
 .reactionIcon {
-  font-size: 1.5em; /* Large emoji size */
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-.reactionIcon:hover {
-  transform: scale(1.15);
+  font-size: 1.2em;
+  cursor: default;
+  flex-shrink: 0;
 }
 
 /* Right Side: Favorite Icon */
 .favorite {
-  color: #dc3545; /* Red heart icon */
   cursor: pointer;
+  padding: 5px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .favoriteIcon {
-  font-size: 1.5em;
-  transition: color 0.2s ease, transform 0.2s ease;
+  font-size: 1.4em;
+  transition: all 0.3s ease;
+  color: #cccccc;
 }
 
-.favoriteIcon:hover {
-  transform: scale(1.2);
-  color: #c82333;
+.favoriteIcon.active {
+  color: #ff4444;
+}
+
+/* --- Enhanced Responsive Breakpoints --- */
+
+/* Small Tablets and Large Phones */
+@media (max-width: 768px) {
+  .serviceSection {
+    padding: 30px 15px;
+  }
+  
+  .mainHeading {
+    font-size: 2em;
+  }
+
+  .introText {
+    font-size: 1.05em;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile Phones (Max 480px) */
+@media (max-width: 480px) {
+  .serviceSection {
+    padding: 20px 10px;
+  }
+  
+  .mainHeading {
+    font-size: 1.8em;
+  }
+
+  .introText {
+    font-size: 1em;
+    padding: 0 5px;
+  }
+
+  .assetsGrid {
+    gap: 15px; /* Reduced gap on mobile */
+  }
+
+  /* Adjust card layout for mobile */
+  .mediaContainer {
+    padding-top: 65%; /* Slightly taller aspect ratio for mobile */
+  }
+
+  .cardHeader, .cardFooter {
+    padding: 10px 12px;
+    min-height: 50px; /* Reduced min-height on mobile */
+  }
+
+  /* Improved text handling for mobile */
+  .assetTitle {
+    font-size: 0.9em;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.3;
+  }
+  
+  .assetTime {
+    font-size: 0.75em;
+  }
+
+  .reactions {
+    gap: 6px; /* Tighter gap on mobile */
+  }
+  
+  .reactionIcon {
+    font-size: 1.1em;
+  }
+
+  .favoriteIcon {
+    font-size: 1.3em;
+  }
+}
+
+/* Very Small Phones (Max 320px) */
+@media (max-width: 320px) {
+  .serviceSection {
+    padding: 15px 8px;
+  }
+
+  .assetsGrid {
+    gap: 12px;
+  }
+
+  .cardHeader, .cardFooter {
+    padding: 8px 10px;
+  }
+
+  .assetTitle {
+    font-size: 0.85em;
+    -webkit-line-clamp: 2;
+  }
+
+  .assetTime {
+    font-size: 0.7em;
+  }
+
+  .reactions {
+    gap: 4px;
+  }
+
+  .reactionIcon {
+    font-size: 1em;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) {
+  .assetCard:hover {
+    transform: none; /* Remove hover effects on touch devices */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .favorite {
+    padding: 8px; /* Larger touch target */
+  }
 }
