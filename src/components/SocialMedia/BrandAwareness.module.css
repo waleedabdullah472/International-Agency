@@ -1,123 +1,160 @@
-.container {
-  text-align: center;
-  padding: 60px 20px;
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+/* Container for the Brand Awareness section */
+.brandAwarenessContainer {
+  padding: 2rem;
+  max-width: 1200px; /* Optional: Sets a maximum width for content */
+  margin: 0 auto; /* Optional: Centers the container */
 }
 
-/* Heading */
-.heading {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 15px;
+/* Styling for the main header (<h1>) */
+.header {
+  font-size: 2.5rem;
   color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-align: center; /* Center the heading as well */
 }
 
-/* Paragraph */
+/* Styling for the main paragraph (<p>) */
 .paragraph {
-  font-size: 1rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
+  font-size: 1.1rem;
+  color: #555;
   line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 3rem; /* Add space before the images */
+  text-align: center; /* Center the paragraph text */
 }
 
-/* Image Grid */
-.imageGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-bottom: 60px;
+/* --- Image Row Styles --- */
+
+/* Container for the 6 images, using Flexbox for alignment and responsiveness */
+.imageRow {
+  display: flex;
+  flex-wrap: wrap; /* Allows images to wrap onto the next line on small screens */
+  justify-content: center; /* Centers the row of images horizontally */
+  align-items: center;
+  gap: 1.5vw; /* Use viewport width for responsive spacing between images */
+  margin: 2rem auto 4rem auto; /* Added extra bottom margin */
 }
 
+/* Wrapper for each image to control its size and provide padding/margin */
 .imageWrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.5s ease, box-shadow 0.3s ease;
-}
-
-.image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* Card Container */
-.cardContainer {
+  /* For 6 items, we want each to take up slightly less than 1/6th of the row width. */
+  flex: 0 0 calc(15% - 1vw);
+  max-width: 15%;
+  aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
+  align-items: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* The actual <img> tag styling */
+.brandImage {
+  width: 100%; /* Makes the image fill its wrapper */
+  height: 100%; /* Makes the image fill its wrapper */
+  object-fit: contain; /* Ensures the whole image is visible without cropping */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* --- Comparison Card Styles --- */
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  width: 320px;
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1; /* Distribute space evenly among the three cards */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
 }
 
-.cardIcon {
-  font-size: 2.5rem;
-  color: #333;
+.cardHeader {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
-.card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #333;
+.icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  min-width: 20px; /* Ensures alignment */
 }
 
-.card p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
+.correct {
+  color: #27ae60; /* Green checkmark */
 }
 
-/* Responsive Design */
+.incorrect {
+  color: #e74c3c; /* Red cross */
+}
+
+
+/* --- Media Queries for Mobile Responsiveness --- */
+
 @media (max-width: 992px) {
-  .imageGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .cardRow {
+    flex-direction: column; /* Stack cards vertically on tablets */
+    gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .heading {
-    font-size: 1.8rem;
+  .header {
+    font-size: 2rem;
   }
-
   .paragraph {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
-  .imageGrid {
-    grid-template-columns: 1fr;
+  .imageRow {
+    /* Increase vertical spacing on mobile */
+    gap: 2vh 2vw;
   }
 
-  .image {
-    height: 200px;
+  .imageWrapper {
+    /* On smaller screens, show 3 images per row */
+    flex: 0 0 calc(30% - 1vw); /* Base size is about 30% to fit 3 per row */
+    max-width: 30%;
   }
 
-  .card {
-    width: 100%;
-    max-width: 350px;
+  .cardHeader {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageWrapper {
+    /* On very small screens, show 2 images per row */
+    flex: 0 0 calc(45% - 1vw); /* Base size is about 45% to fit 2 per row */
+    max-width: 45%;
   }
 }
