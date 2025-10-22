@@ -1,82 +1,149 @@
-import React from 'react';
-import styles from './PaidAdvertising.module.css';
+import React from "react";
+import styles from "./PaidAdvertising.module.css";
 
-const PaidAdvertising = () => (
-  <div className={styles.paidAdvertising}>
-    {/* Centered Main Heading and Paragraph */}
-    <div className={styles.header}>
-      <h1>Paid Advertising Campaign Options</h1>
-      <p>
-        Explore our curated selection of paid advertising packages across the most
-        effective social media platforms. Each option is designed to maximize
-        reach and conversion for your specific business goals.
+const PaidAdvertising = () => {
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Our Social Media Management Packages</h2>
+      <p className={styles.description}>
+        In today’s competitive digital landscape, Our dedicated team is committed to providing you with the tools, strategies, and the support you need to stand out and make an impact in the digital world that too within the most convenient price bracket
       </p>
-    </div>
 
-    {/* Three Card Layout for Platform Options */}
-    <div className={styles.cardContainer}>
-      
-      {/* Card 1: Facebook/Instagram */}
-      <div className={styles.card}>
-        <div className={styles.content}>
-          <h2 className={styles.mainHeading}>Facebook/Instagram Reach</h2>
-          <p className={styles.description}>
-            Target a vast, diverse audience with highly segmented demographics 
-            and interest-based targeting on the Meta platform.
+      <div className={styles.cards}>
+        {/* Card 1 */}
+        <div className={styles.card}>
+          <h3>Social Basic</h3>
+          <p>
+            A basic entry-level package for those starting out on social media
+            and the digital world. Includes basic content posting and monitoring.
           </p>
-          
-          <h3 className={styles.smallHeading}>Campaign Schedule</h3>
-          <ul className={styles.scheduleList}>
-            <li><span className={styles.time}>9:00 AM</span> - Campaign Launch & Budget Allocation</li>
-            <li><span className={styles.time}>10:30 AM</span> - Initial A/B Testing Phase Begins</li>
-            <li><span className={styles.time}>1:00 PM</span> - Creative Performance Review</li>
-            <li><span className={styles.time}>3:30 PM</span> - Mid-Day Optimization Adjustments</li>
-            <li><span className={styles.time}>5:00 PM</span> - Daily Performance Summary Report</li>
-          </ul>
-        </div>
-      </div>
 
-      {/* Card 2: LinkedIn */}
-      <div className={styles.card}>
-        <div className={styles.content}>
-          <h2 className={styles.mainHeading}>LinkedIn B2B Lead Generation</h2>
-          <p className={styles.description}>
-            Focus on professional connections, industry leaders, and key
-            decision-makers for high-value business-to-business (B2B) leads.
-          </p>
-          
-          <h3 className={styles.smallHeading}>Campaign Schedule</h3>
-          <ul className={styles.scheduleList}>
-            <li><span className={styles.time}>8:30 AM</span> - Audience Refinement Session</li>
-            <li><span className={styles.time}>11:00 AM</span> - Sponsored Content Distribution</li>
-            <li><span className={styles.time}>2:00 PM</span> - Messaging and Copy Review</li>
-            <li><span className={styles.time}>4:00 PM</span> - Competitor Analysis Check</li>
-            <li><span className={styles.time}>6:00 PM</span> - Lead Capture System Verification</li>
+          <h4>Standard Offerings</h4>
+          <ul>
+            <li>Posts per Month - 08</li>
+            <li>Gifs / Videos - Included</li>
+            <li>Posts Copywriting per Month - 08</li>
+            <li>Number of Networks - 2 (Meta)</li>
+            <li>Paid Ad Campaigns - 6</li>
           </ul>
+
+          <h4>Strategic Offerings</h4>
+          <ul>
+            <li>Brand Reputation Analysis</li>
+            <li>Social Media Marketing Strategy</li>
+            <li>Social Media Competitive Analysis</li>
+            <li>Monthly Audit + Recommendations</li>
+          </ul>
+
+          <h4>Platform Optimizations</h4>
+          <ul>
+            <li>Cover Photo & Profile</li>
+            <li>Ad Account Optimization</li>
+            <li>Network Setup & Optimization</li>
+            <li>Business Page Setup / Optimization</li>
+          </ul>
+
+          <h4>Marketing Optimizations</h4>
+          <ul>
+            <li>Organic Growth Tactics</li>
+            <li>Customer Segmentation</li>
+            <li>Suggested Paid Budget - $750</li>
+            <li>Community Management - 6 Hrs</li>
+          </ul>
+
+          <button className={styles.button}>Choose Plan</button>
         </div>
-      </div>
-      
-      {/* Card 3: TikTok/YouTube Shorts */}
-      <div className={styles.card}>
-        <div className={styles.content}>
-          <h2 className={styles.mainHeading}>Short-Form Video Virality</h2>
-          <p className={styles.description}>
-            Leverage the power of short, engaging video content to build brand 
-            awareness and tap into younger, mobile-first markets.
+
+        {/* Card 2 */}
+        <div className={styles.card}>
+          <h3>Social Pro</h3>
+          <p>
+            A mid-tier package designed for growing businesses. Offers more
+            engagement, content creation, and reporting.
           </p>
-          
-          <h3 className={styles.smallHeading}>Campaign Schedule</h3>
-          <ul className={styles.scheduleList}>
-            <li><span className={styles.time}>10:00 AM</span> - Creative Asset Upload & Approval</li>
-            <li><span className={styles.time}>12:30 PM</span> - Trend Integration Check</li>
-            <li><span className={styles.time}>2:30 PM</span> - Engagement Rate Monitoring</li>
-            <li><span className={styles.time}>4:30 PM</span> - Hashtag and Placement Optimization</li>
-            <li><span className={styles.time}>7:00 PM</span> - Peak Traffic Hour Boost</li>
+
+          <h4>Standard Offerings</h4>
+          <ul>
+            <li>Posts per Month - 16-20</li>
+            <li>Gifs / Videos - Included</li>
+            <li>Posts Copywriting per Month - 16-20</li>
+            <li>Number of Networks - 3</li>
+            <li>Paid Ad Campaigns - 8</li>
           </ul>
+
+          <h4>Strategic Offerings</h4>
+          <ul>
+            <li>Brand Reputation Analysis</li>
+            <li>Social Media Marketing Strategy</li>
+            <li>Social Media Competitive Analysis</li>
+            <li>Monthly Audit + Recommendations</li>
+          </ul>
+
+          <h4>Platform Optimizations</h4>
+          <ul>
+            <li>Cover Photo & Profile</li>
+            <li>Ad Account Optimization</li>
+            <li>Network Setup & Optimization</li>
+            <li>Business Page Setup / Optimization</li>
+          </ul>
+
+          <h4>Marketing Optimizations</h4>
+          <ul>
+            <li>Organic Growth Tactics</li>
+            <li>Customer Segmentation</li>
+            <li>Suggested Paid Budget - $1000</li>
+            <li>Community Management - 10 Hrs</li>
+          </ul>
+
+          <button className={styles.button}>Choose Plan</button>
+        </div>
+
+        {/* Card 3 */}
+        <div className={styles.card}>
+          <h3>Social Elite</h3>
+          <p>
+            A premium package for established brands seeking advanced campaign
+            strategies, analytics, and high engagement growth.
+          </p>
+
+          <h4>Standard Offerings</h4>
+          <ul>
+            <li>Posts per Month - 25+</li>
+            <li>Gifs / Videos - Included</li>
+            <li>Posts Copywriting per Month - 25+</li>
+            <li>Number of Networks - 5</li>
+            <li>Paid Ad Campaigns - 12</li>
+          </ul>
+
+          <h4>Strategic Offerings</h4>
+          <ul>
+            <li>Comprehensive Brand Audit</li>
+            <li>Advanced Marketing Strategy</li>
+            <li>Competitor Benchmark Reports</li>
+            <li>Monthly + Weekly Insights</li>
+          </ul>
+
+          <h4>Platform Optimizations</h4>
+          <ul>
+            <li>Complete Brand Kit Setup</li>
+            <li>Advanced Ad Account Management</li>
+            <li>Multi-Network Integration</li>
+            <li>Page Performance Optimization</li>
+          </ul>
+
+          <h4>Marketing Optimizations</h4>
+          <ul>
+            <li>Influencer Collaboration Strategy</li>
+            <li>Audience Targeting Expansion</li>
+            <li>Suggested Paid Budget - $1500</li>
+            <li>Community Management - 20 Hrs</li>
+          </ul>
+
+          <button className={styles.button}>Choose Plan</button>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default PaidAdvertising;

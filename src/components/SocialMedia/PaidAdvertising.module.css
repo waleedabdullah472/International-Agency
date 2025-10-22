@@ -1,117 +1,302 @@
-/* --- Main Container and Header Styling --- */
-.paidAdvertising {
-  padding: 40px 20px;
-  max-width: 1200px; /* Limits the overall width for better readability */
-  margin: 0 auto; /* Centers the whole component */
+/* PaidAdvertising.module.css */
+.container {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.header {
-  text-align: center; /* Centers the h1 and p within the header */
-  margin-bottom: 50px;
-}
-
-.header h1 {
-  font-size: 2.5em;
+.heading {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
   color: #333;
-  margin-bottom: 10px;
-}
-
-.header p {
-  font-size: 1.1em;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto; /* Centers the paragraph */
-}
-
-/* --- Card Container (CSS Grid for Responsiveness) --- */
-.cardContainer {
-  display: grid;
-  /* Default: 1 column for small screens (mobile) */
-  grid-template-columns: 1fr; 
-  gap: 30px; /* Space between cards */
-}
-
-/* Tablet and larger screens (Adjust this breakpoint as needed) */
-@media (min-width: 768px) {
-  .cardContainer {
-    /* Two columns on tablets */
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-/* Desktop screens */
-@media (min-width: 1024px) {
-  .cardContainer {
-    /* Three columns on desktop */
-    grid-template-columns: repeat(3, 1fr); 
-  }
-}
-
-/* --- Card Styling --- */
-.card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 25px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.mainHeading {
-  font-size: 1.6em;
-  color: #007bff; /* Primary brand color for main heading */
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  text-align: left; /* Heading on the left side */
 }
 
 .description {
-  font-size: 1em;
-  color: #555;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: #666;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card:hover {
+  background: #f8f8f8;
+  transform: translateY(-5px);
+  border-color: #666;
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.15);
+}
+
+.card h3 {
+  font-size: clamp(1.4rem, 3vw, 1.6rem);
   margin-bottom: 20px;
-  text-align: left;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
 }
 
-.smallHeading {
-  font-size: 1.2em;
+.card p {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.6;
+  margin-bottom: 25px;
   color: #333;
+  text-align: center;
+  font-weight: 400;
+}
+
+.card h4 {
   margin-top: 25px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  color: #000;
+  font-weight: 600;
 }
 
-/* --- Schedule List Styling --- */
-.scheduleList {
-  list-style: none; /* Remove default bullet points */
-  padding: 0;
-  margin: 0;
+.card ul {
+  margin: 15px 0;
+  padding-left: 0;
+  list-style-type: none;
 }
 
-.scheduleList li {
-  margin-bottom: 8px;
-  padding: 5px 0;
-  font-size: 0.95em;
-  color: #444;
-  border-bottom: 1px dashed #eee;
-  text-align: left;
+.card li {
+  margin: 10px 0;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #333;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 25px;
+  font-weight: 400;
 }
 
-.scheduleList li:last-child {
-  border-bottom: none;
-}
-
-/* Time styling to make it stand out */
-.time {
+.card li:before {
+  content: "✓";
+  color: #000;
   font-weight: bold;
-  color: #28a745; /* A distinct color for the time */
-  margin-right: 8px;
-  display: inline-block; /* Helps align the text properly */
-  min-width: 65px; /* Ensures time alignment */
+  position: absolute;
+  left: 0;
+  background: #f0f0f0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border: 1px solid #ddd;
+}
+
+.button {
+  margin-top: auto;
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 15px 35px;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cards {
+    gap: 25px;
+  }
+  
+  .card {
+    max-width: 380px;
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 50px 20px;
+  }
+  
+  .cards {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 25px;
+  }
+  
+  .card {
+    max-width: 350px;
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 15px;
+  }
+  
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .card {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .description {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 35px 10px;
+  }
+  
+  .card {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+  }
+  
+  .button {
+    padding: 14px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 8px;
+  }
+  
+  .card {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+  
+  .heading {
+    font-size: 1.6rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .card li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover {
+    transform: none;
+    background: #fff;
+    border-color: #333;
+  }
+  
+  .card:active {
+    background: #f8f8f8;
+    transform: scale(0.98);
+  }
+  
+  .button:hover {
+    transform: none;
+  }
+  
+  .button:active {
+    transform: scale(0.95);
+    background: #333;
+    color: #fff;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .button {
+    transition: none;
+  }
+  
+  .card:hover,
+  .button:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 3px;
+  }
+  
+  .card:hover {
+    border-color: #000;
+  }
+  
+  .button {
+    border: 3px solid #000;
+  }
+  
+  .card li:before {
+    border: 2px solid #000;
+  }
 }
