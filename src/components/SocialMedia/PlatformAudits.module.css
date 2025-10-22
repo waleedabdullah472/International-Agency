@@ -1,28 +1,336 @@
 /* src/components/SocialMedia/PlatformAudits.module.css */
+
+/* --- General Section Styling --- */
 .serviceSection {
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #4a4a4a; /* Unique color */
-  background-color: #f7f7f7;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
-.sectionTitle {
-  color: #4a4a4a; /* Matches border */
-  margin-top: 0;
-  font-size: 1.5rem;
+.header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.description {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #555;
+.mainHeading {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: #333;
+  border-bottom: 3px solid #333;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin: 0;
+  font-weight: 700;
 }
 
-.featureList {
-  list-style: disc;
-  padding-left: 20px;
-  margin-top: 10px;
+/* --- Content Grid (Responsive Layout) --- */
+.contentContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Desktop/Tablet Layout: Two columns side-by-side */
+@media (min-width: 768px) {
+  .contentContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Card Styling --- */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cardIconHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.cardHeaderIcon {
+  font-size: 1.8em;
+  margin-right: 10px;
+  color: #333;
+}
+
+.cardHeading {
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.card:nth-child(2) .cardHeaderIcon,
+.card:nth-child(2) .cardHeading {
   color: #666;
+}
+
+.cardIntro {
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* --- Feature List Styling --- */
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 30px 0;
+  flex-grow: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #333;
+  line-height: 1.5;
+}
+
+.checkIcon {
+  color: #333;
+  font-size: 1.2em;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+  min-width: 18px;
+  flex-shrink: 0;
+}
+
+.card:nth-child(2) .checkIcon {
+  color: #666;
+}
+
+/* --- Button Styling --- */
+.actionButton {
+  align-self: flex-start;
+  padding: 12px 24px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 600;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.actionButton:hover {
+  background-color: #666;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.paidButton {
+  background-color: #666;
+}
+
+.paidButton:hover {
+  background-color: #333;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .serviceSection {
+    padding: 40px 20px;
+  }
+  
+  .contentContainer {
+    gap: 25px;
+  }
+  
+  .card {
+    padding: 25px;
+  }
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+  .serviceSection {
+    padding: 30px 15px;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .contentContainer {
+    gap: 20px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .cardIconHeader {
+    margin-bottom: 12px;
+  }
+  
+  .actionButton {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .serviceSection {
+    padding: 25px 12px;
+  }
+  
+  .header {
+    margin-bottom: 25px;
+  }
+  
+  .mainHeading {
+    font-size: 1.6rem;
+    padding-bottom: 6px;
+  }
+  
+  .contentContainer {
+    gap: 15px;
+  }
+  
+  .card {
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .cardIconHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .cardHeaderIcon {
+    margin-right: 0;
+    font-size: 1.5em;
+  }
+  
+  .actionButton {
+    padding: 10px 20px;
+    min-width: 160px;
+    font-size: 0.9rem;
+  }
+  
+  .featureItem {
+    margin-bottom: 12px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .serviceSection {
+    padding: 20px 10px;
+  }
+  
+  .mainHeading {
+    font-size: 1.4rem;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .actionButton {
+    padding: 8px 16px;
+    min-width: 140px;
+    font-size: 0.85rem;
+  }
+}
+
+/* --- Accessibility & Performance --- */
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .actionButton {
+    transition: none;
+  }
+  
+  .card:hover,
+  .actionButton:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #333;
+  }
+  
+  .actionButton {
+    border: 2px solid #333;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .actionButton:hover {
+    transform: none;
+    background-color: #333;
+  }
+  
+  .actionButton:active {
+    transform: scale(0.98);
+    background-color: #666;
+  }
+  
+  .paidButton:hover {
+    background-color: #666;
+  }
+  
+  .paidButton:active {
+    background-color: #333;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.actionButton:focus-visible {
+  outline: 3px solid #333;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .serviceSection {
+    padding: 20px 0;
+    background: white;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #333;
+  }
+  
+  .actionButton {
+    background: #333;
+    color: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }

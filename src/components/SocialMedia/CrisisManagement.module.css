@@ -1,28 +1,152 @@
 /* src/components/SocialMedia/CrisisManagement.module.css */
+
+/* --- General Section Styling --- */
 .serviceSection {
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #d0021b; /* Unique color */
-  background-color: #fff4f4;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 40px 20px;
+  background-color: #f8f9fa; /* Light background for contrast */
+  font-family: Arial, sans-serif;
 }
 
-.sectionTitle {
-  color: #d0021b; /* Matches border */
-  margin-top: 0;
-  font-size: 1.5rem;
+.header {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.description {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #555;
+.mainHeading {
+  font-size: 2.5em;
+  color: #007bff; /* Digital Otters Blue */
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.featureList {
-  list-style: disc;
-  padding-left: 20px;
-  margin-top: 10px;
-  color: #666;
+.introText {
+  font-size: 1.1em;
+  color: #495057;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Assets Grid Layout (Responsive) --- */
+.assetsGrid {
+  display: grid;
+  /* Default: 1 column on small screens */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+/* Tablet Layout (2 Columns) */
+@media (min-width: 600px) {
+  .assetsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Layout (3 Columns - For "every row 3 tile") */
+@media (min-width: 992px) {
+  .assetsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Asset Card Styling --- */
+.assetCard {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.assetCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Card Header (Title and Time) --- */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.assetTitle {
+  font-weight: 600;
+  color: #343a40;
+  font-size: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.assetTime {
+  font-size: 0.85em;
+  color: #6c757d;
+}
+
+/* --- Media Placeholder Styling --- */
+.mediaContainer {
+  height: 200px; /* Fixed height for consistent card size */
+  background-color: #ced4da;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #495057;
+  position: relative;
+}
+
+.mediaIcon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.mediaPlaceholderText {
+  font-style: italic;
+  margin: 0;
+}
+
+/* --- Card Footer (Reactions and Favorite) --- */
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+/* Left Side: Reactions */
+.reactions {
+  display: flex;
+  gap: 10px;
+}
+
+.reactionIcon {
+  font-size: 1.5em; /* Large emoji size */
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.reactionIcon:hover {
+  transform: scale(1.15);
+}
+
+/* Right Side: Favorite Icon */
+.favorite {
+  color: #dc3545; /* Red heart icon */
+  cursor: pointer;
+}
+
+.favoriteIcon {
+  font-size: 1.5em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.favoriteIcon:hover {
+  transform: scale(1.2);
+  color: #c82333;
 }
