@@ -213,10 +213,12 @@
   
   .sectionHeading {
     font-size: 1.3rem;
+    text-align: center;
   }
   
   .sectionParagraph {
     font-size: 0.95rem;
+    text-align: center;
   }
 }
 
