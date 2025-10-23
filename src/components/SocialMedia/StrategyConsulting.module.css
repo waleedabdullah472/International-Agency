@@ -12,14 +12,16 @@
   padding: 0 20px;
 }
 
+/* === Row 1: Main Content & Big Image === */
 .contentWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  margin-bottom: 60px; /* Space between the two rows */
 }
 
-/* Left Content Styles */
+/* Left Content Styles (Row 1) */
 .leftContent {
   padding-right: 20px;
 }
@@ -63,7 +65,6 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 40px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -73,11 +74,53 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* 7 Images Row */
+/* Right Content - Single Big Image (Row 1) */
+.rightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleImageContainer {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 500px;
+  width: 100%;
+  opacity: 1;
+  transform: none;
+}
+
+.bigImage {
+ 
+  height: 500px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* === Row 2: Small Images & Recognition Section === */
+.secondaryContentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.secondaryLeftContent {
+  /* This is where the imagesRow is located */
+}
+
+.secondaryRightContent {
+  /* This is where the recognitionSection is located */
+}
+
+/* 6 Images Row - Updated for responsive layout */
 .imagesRow {
   display: flex;
   gap: 15px;
-  margin-bottom: 40px;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -88,15 +131,12 @@
   max-width: 80px;
   border-radius: 20px;
   overflow: hidden;
-  
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
 
 .smallImageContainer:hover {
   transform: translateY(-5px);
- 
-  
 }
 
 .smallImage {
@@ -108,7 +148,6 @@
 
 /* Recognition Section */
 .recognitionSection {
-  margin-top: 40px;
   padding: 30px;
   background: white;
   border-radius: 15px;
@@ -165,45 +204,11 @@
   font-weight: 500;
 }
 
-/* Right Content - Single Big Image - NO BORDER, NO HOVER */
-.rightContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* === Responsive Design (100% Responsive) === */
 
-.singleImageContainer {
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: none;
-  transition: none;
-  border: none;
-  background: transparent;
-  padding: 0;
-  max-width: 500px;
-  width: 100%;
-  opacity: 0;
-  transform: translateX(50px);
-}
-
-.bigImage {
-  width: 100%;
-  height: 500px;
-  
-  border-radius: 0;
-  transition: none;
-}
-
-/* Scroll Animation Classes */
-.singleImageContainer.animate {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.8s ease-out;
-}
-
-/* Responsive Design */
 @media (max-width: 1024px) {
-  .contentWrapper {
+  .contentWrapper,
+  .secondaryContentWrapper {
     gap: 40px;
   }
   
@@ -221,24 +226,43 @@
     padding: 60px 0;
   }
   
+  /* Stack all content vertically on mobile */
   .contentWrapper {
     grid-template-columns: 1fr;
     gap: 40px;
-    grid-template-areas: 
-      "rightContent"
-      "leftContent";
+    margin-bottom: 40px;
   }
   
   .leftContent {
     padding-right: 0;
     text-align: center;
-    grid-area: leftContent;
   }
   
+  /* Center the big image on mobile */
   .rightContent {
-    grid-area: rightContent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   
+  .singleImageContainer {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  .bigImage {
+    height: 350px;
+    max-width: 500px;
+    
+  }
+  
+  .secondaryContentWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .sectionTitle::after {
     left: 50%;
     transform: translateX(-50%);
@@ -248,18 +272,22 @@
     text-align: center;
   }
   
+  /* Arrange small images in 2 rows of 3 on tablet and mobile */
   .imagesRow {
-    justify-content: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
   }
   
   .smallImageContainer {
-    min-width: 50px;
-    max-width: 60px;
+    min-width: 80px;
+    max-width: 100px;
   }
   
   .smallImage {
-    height: 50px;
+    height: 80px;
+    width: 100%;
   }
   
   .reviewPlatforms {
@@ -296,44 +324,42 @@
   }
   
   .bigImage {
-    height: 300px;
+    height: 250px;
   }
   
+  /* For very small screens, ensure images row stays as 3 columns */
   .imagesRow {
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
   
   .smallImageContainer {
-    min-width: 45px;
-    max-width: 55px;
+    min-width: 70px;
+    max-width: 90px;
   }
   
   .smallImage {
-    height: 45px;
+    height: 70px;
     border-radius: 15px;
   }
 }
 
-/* Animation for small images on load */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* Additional media query for medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* On medium screens, also show 3 images per row */
+  .imagesRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .smallImageContainer {
+    min-width: 90px;
+    max-width: 110px;
+  }
+  
+  .smallImage {
+    height: 90px;
   }
 }
-
-.smallImageContainer {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.smallImageContainer:nth-child(1) { animation-delay: 0.1s; }
-.smallImageContainer:nth-child(2) { animation-delay: 0.2s; }
-.smallImageContainer:nth-child(3) { animation-delay: 0.3s; }
-.smallImageContainer:nth-child(4) { animation-delay: 0.4s; }
-.smallImageContainer:nth-child(5) { animation-delay: 0.5s; }
-.smallImageContainer:nth-child(6) { animation-delay: 0.6s; }
-.smallImageContainer:nth-child(7) { animation-delay: 0.7s; }

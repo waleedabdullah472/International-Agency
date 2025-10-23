@@ -1,41 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import styles from './StrategyConsulting.module.css';
 
 const StrategyConsulting = () => {
-  const imageRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: '0px 0px -100px 0px'
-      }
-    );
-
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
-    }
-
-    return () => {
-      if (imageRef.current) {
-        observer.unobserve(imageRef.current);
-      }
-    };
-  }, []);
-
   return (
     <section className={styles.serviceSection}>
       <div className={styles.container}>
+        
+        {/* === First Row: Main Content Only (Text) === */}
         <div className={styles.contentWrapper}>
           
-          {/* Left Content */}
+          {/* Left Content (Row 1) - This becomes the top content on mobile */}
           <div className={styles.leftContent}>
             <h3 className={styles.sectionTitle}>Social Media<br></br> Management Agency</h3>
             <p className={styles.description}>
@@ -45,8 +19,22 @@ const StrategyConsulting = () => {
             <button className={styles.ctaButton}>
               Get Started
             </button>
+          </div>
 
-            {/* 7 Images Row */}
+          {/* Right Content - Single Big Image (Moved to row 3 on mobile) */}
+          <div className={styles.rightContent}>
+            <div className={styles.singleImageContainer}>
+              <img src="./baby boy.png" alt="Social Media Management" className={styles.bigImage} />
+            </div>
+          </div>
+
+        </div>
+
+        {/* === Second Row: Small Images & Recognition Section === */}
+        <div className={styles.secondaryContentWrapper}>
+          
+          {/* Left Content (Row 2): 7 Images Row */}
+          <div className={styles.secondaryLeftContent}>
             <div className={styles.imagesRow}>
               <div className={styles.smallImageContainer}>
                 <img src="./1.webp" alt="Social Media Service 1" className={styles.smallImage} />
@@ -66,10 +54,11 @@ const StrategyConsulting = () => {
               <div className={styles.smallImageContainer}>
                 <img src="./6.webp" alt="Social Media Service 6" className={styles.smallImage} />
               </div>
-             
             </div>
+          </div>
 
-            {/* Recognition Section */}
+          {/* Right Content (Row 2): Recognition Section */}
+          <div className={styles.secondaryRightContent}>
             <div className={styles.recognitionSection}>
               <div className={styles.recognizedBy}>RECOGNIZED BY:</div>
               <div className={styles.reviewPlatforms}>
@@ -88,16 +77,6 @@ const StrategyConsulting = () => {
                   <div className={styles.reviewCount}>100+ Reviews</div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Right Content - Single Big Image */}
-          <div className={styles.rightContent}>
-            <div 
-              ref={imageRef}
-              className={`${styles.singleImageContainer} ${isVisible ? styles.animate : ''}`}
-            >
-              <img src="./baby boy.png" alt="Social Media Management" className={styles.bigImage} />
             </div>
           </div>
 
