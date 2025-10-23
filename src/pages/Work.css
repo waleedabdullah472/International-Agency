@@ -12,18 +12,9 @@
     margin-bottom: 60px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: fadeInDown 1s ease-out 0.5s forwards;
 }
 
-@keyframes fadeInDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Picture Grid */
 .pictures-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -40,20 +31,16 @@
     transition: all 0.4s ease;
     cursor: pointer;
     aspect-ratio: 4/3;
-    
 }
 
 .picture-item:hover {
     transform: translateY(-5px);
- 
 }
 
 .picture-image {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
-    
 }
 
 .picture-item:hover .picture-image {
@@ -61,62 +48,18 @@
     transform: scale(1.05);
 }
 
-/* Initial hidden state */
-.hide-picture-initial {
-    opacity: 0;
-}
-
-/* Animation classes */
-.animate-left-to-right {
-    animation: slideInFromLeft 0.8s ease-out forwards;
-    animation-delay: calc(var(--i) * 0.1s);
-}
-
-.animate-bottom-to-top {
-    animation: slideInFromBottom 0.8s ease-out forwards;
-    animation-delay: calc(var(--i) * 0.1s);
-}
-
-.animate-right-to-left {
-    animation: slideInFromRight 0.8s ease-out forwards;
-    animation-delay: calc(var(--i) * 0.1s);
-}
-
-/* Animation keyframes */
-@keyframes slideInFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .work-title {
+        font-size: 3rem;
+        margin-bottom: 50px;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+
+    .pictures-grid {
+        gap: 20px;
     }
 }
 
-@keyframes slideInFromBottom {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
     .work-title {
         font-size: 2.5rem;
