@@ -28,7 +28,7 @@ const cardData = [
             { text: 'Lack of experience in various sectors that assist social media managers, leads to delays.', isCorrect: false },
             { text: 'Slow reporting can lead to delayed actions, that can in turn waste ad spend.', isCorrect: false },
             { text: 'Generic analytical tools for reporting and monitoring, may not be efficient for high budgeted ad campaigns.', isCorrect: false },
-            { text: 'S.M.A.R.T. Goals, but limited resources and experience for ideal results and implementation.', isCorrect: false },
+            { text: 'S.M.A.R.T. Goals, but limited resources and experience for ideal results and implementation.', isCorrect: true },
         ],
     },
     {
