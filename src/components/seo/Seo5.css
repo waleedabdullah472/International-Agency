@@ -1,0 +1,153 @@
+/* === Seo5 Section Styling === */
+.seo5-container {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    text-align: center;
+    font-family: "Inter", Arial, sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.seo5-heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.seo5-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: #555;
+    line-height: 1.6;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* === Grid Layout (Default 4-in-a-row) === */
+.seo5-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards on large screens */
+    gap: 30px;
+    justify-content: center;
+}
+
+/* === Card Styling === */
+.seo5-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    flex-direction: column;
+}
+
+.seo5-card:hover {
+    transform: translateY(-5px);
+    border-color: #000;
+    background: #f9f9f9;
+}
+
+.seo5-card h3 {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.seo5-card p {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.seo5-card h4 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    color: #000;
+    font-weight: 600;
+}
+
+.seo5-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.seo5-card li {
+    position: relative;
+    padding-left: 25px;
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.seo5-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000;
+    background: #f1f1f1;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.seo5-button {
+    margin-top: auto;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%; /* Make button full width */
+}
+
+.seo5-button:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* === Responsive Design (Corrected breakpoints for grid) === */
+
+/* 4-in-a-row is default for > 1200px */
+
+@media (max-width: 1200px) {
+    .seo5-cards {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards in a row for medium-large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .seo5-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards in a row for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .seo5-cards {
+        grid-template-columns: 1fr; /* 1 card in a row for mobile phones */
+    }
+    .seo5-container {
+        padding: 50px 20px;
+    }
+}

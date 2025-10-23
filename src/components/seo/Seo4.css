@@ -1,0 +1,135 @@
+/* === Section Styling === */
+.seo4-section {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+}
+
+.seo4-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Row Layout === */
+.seo4-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* === Left: Image === */
+.seo4-left {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.seo4-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* === Center: Text === */
+.seo4-center {
+  flex: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.seo4-heading {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.seo4-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Right: Button === */
+.seo4-right {
+  flex: 1;
+  text-align: center;
+}
+
+.seo4-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.seo4-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .seo4-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seo4-center {
+    order: 2;
+    padding: 20px 0;
+  }
+
+  .seo4-left {
+    order: 1;
+  }
+
+  .seo4-right {
+    order: 3;
+  }
+
+  .seo4-heading {
+    font-size: 1.8rem;
+  }
+
+  .seo4-description {
+    font-size: 1rem;
+  }
+
+  .seo4-btn {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .seo4-section {
+    padding: 50px 0;
+  }
+
+  .seo4-image {
+    max-width: 250px;
+  }
+
+  .seo4-heading {
+    font-size: 1.6rem;
+  }
+
+  .seo4-description {
+    font-size: 0.95rem;
+  }
+
+  .seo4-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
