@@ -1,0 +1,70 @@
+/* Container for the entire section */
+.stats-section-seo2 {
+    padding: 40px 0;
+    background-color: #ffffff; /* Use a clean background */
+}
+
+.stats-container-seo2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    /* Display: Grid for a 4-column layout on desktop */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual Card Styling */
+.stat-card-seo2 {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex; /* Centers content vertically */
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card-seo2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-text-seo2 {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 🎯 Styling for the first two words (The Change) */
+.stat-highlight-seo2 {
+    font-size: 1.5rem; /* Make it larger */
+    font-weight: 800; /* Make it bold */
+    color: #000; /* Use a distinct color like black */
+    display: block; /* Make the highlight span take its own line for emphasis */
+    margin-bottom: 5px;
+}
+
+/* === Responsive Design === */
+
+/* Tablet View: 2 columns */
+@media (max-width: 992px) {
+    .stats-container-seo2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View: 1 column */
+@media (max-width: 576px) {
+    .stats-container-seo2 {
+        grid-template-columns: 1fr;
+    }
+    .stat-highlight-seo2 {
+        font-size: 1.4rem;
+    }
+}
