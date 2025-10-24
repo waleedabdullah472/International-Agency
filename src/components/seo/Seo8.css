@@ -1,0 +1,57 @@
+/* --- Base Styling and Centering --- */
+
+.seo-tools-section {
+    /* Optional: Sets a max width for better readability on very large screens */
+    max-width: 1200px; 
+    /* Centers the entire section horizontally on the page */
+    margin: 0 auto; 
+    /* Centers the heading and paragraph text */
+    text-align: center; 
+    padding: 20px 10px;
+}
+
+/* Flexbox container for the images */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap onto a new row */
+    justify-content: center; /* Crucial for centering the rows of images */
+    gap: 15px; /* Space between images */
+    margin-top: 30px;
+}
+
+/* --- Small/Medium Screens (Default: 3 images in a row) --- */
+
+/* Sets the width for each image container to just under 1/3 (33.333%) 
+   to allow for the 15px gap on both sides. */
+.tool-image {
+    width: calc(33.333% - 10px); 
+    max-width: 150px; /* Optional: Sets a reasonable maximum size for a single logo */
+    box-sizing: border-box; 
+    padding: 10px; /* Optional: Add some padding if logos are square */
+}
+
+/* Ensure the image fills its container without distortion */
+.tool-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Prevents logos from being cut off if container size is fixed */
+}
+
+/* --- Media Query for Large Screens (6 images in a row) --- */
+/* Applies when the screen is 992px or wider (typical desktop size) */
+@media (min-width: 992px) {
+    /* Sets the width for each image container to just under 1/6 (16.666%) */
+    .tool-image {
+        width: calc(16.666% - 13px);
+    }
+}
+
+/* --- Optional: Media Query for Extra Small Screens (2 images in a row) --- */
+/* Applies when the screen is 576px or smaller (typical mobile size) */
+@media (max-width: 576px) {
+    .tool-image {
+        /* Sets the width for each image container to just under 1/2 (50%) */
+        width: calc(50% - 10px); 
+    }
+}

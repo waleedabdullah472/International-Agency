@@ -1,0 +1,138 @@
+/* --- Base Styling and Centering --- */
+.seo-tools-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+.seo-tools-section h4 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Image Gallery --- */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.tool-image {
+  width: calc(33.333% - 10px);
+  max-width: 150px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.tool-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Large screens - 6 per row */
+@media (min-width: 992px) {
+  .tool-image {
+    width: calc(16.666% - 13px);
+  }
+}
+
+/* Mobile - 2 per row */
+@media (max-width: 576px) {
+  .tool-image {
+    width: calc(50% - 10px);
+  }
+}
+
+/* --- Agile SEO Process Cards --- */
+.process-heading {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.seo-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.seo-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.seo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.seo-logo {
+  width: 70px;
+  height: 70px;
+  
+  object-fit: contain;
+}
+
+.seo-card h3 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.seo-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- SEO Code of Ethics --- */
+.ethics-heading {
+  margin-top: 60px;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* --- Responsive Text Scaling --- */
+@media (max-width: 768px) {
+  .seo-tools-section h4 {
+    font-size: 1.6rem;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+  }
+
+  .process-heading {
+    font-size: 1.6rem;
+  }
+}
