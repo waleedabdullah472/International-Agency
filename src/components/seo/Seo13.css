@@ -1,0 +1,132 @@
+/* === Section Base Styling === */
+.seo13-section {
+  background-color: #fff;
+  padding: 100px 20px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === Container === */
+.seo13-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Top Header === */
+.seo13-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.seo13-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.seo13-paragraph {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* === Row Layout (Left + Right) === */
+.seo13-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* === Left Side Text === */
+.seo13-left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.seo13-subheading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.seo13-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.seo13-list {
+  margin: 15px 0 25px 20px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.seo13-list li {
+  margin-bottom: 10px;
+}
+
+.seo13-bold {
+  font-weight: 600;
+  color: #333;
+}
+
+/* === Right Side Image === */
+.seo13-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seo13-image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  
+  object-fit: contain;
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .seo13-heading {
+    font-size: 2rem;
+  }
+
+  .seo13-paragraph {
+    font-size: 1rem;
+  }
+
+  .seo13-row {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .seo13-right {
+    margin-bottom: 40px;
+  }
+
+  .seo13-left {
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .seo13-heading {
+    font-size: 1.8rem;
+  }
+
+  .seo13-subheading {
+    font-size: 1.3rem;
+  }
+
+  .seo13-text {
+    font-size: 0.95rem;
+  }
+}

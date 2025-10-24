@@ -1,0 +1,148 @@
+/* Main Section */
+.seo14-section {
+  background-color: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);;
+  padding: 100px 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.seo14-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+/* === LEFT SIDE === */
+.seo14-left h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.seo14-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.seo14-desc {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.seo14-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.seo14-list li {
+  padding: 8px 0;
+  font-size: 1rem;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+}
+
+.seo14-list li::before {
+  content: "✔";
+  color: #333;
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+}
+
+.seo14-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.seo14-btn:hover {
+  background-color: #666;
+  transform: translateY(-3px);
+}
+
+/* === RIGHT SIDE === */
+.seo14-right {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.industry-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.industry-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.industry-info h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.industry-info p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .seo14-container {
+    grid-template-columns: 1fr;
+  }
+
+  .seo14-right {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .seo14-left h2 {
+    font-size: 2rem;
+  }
+
+  .seo14-btn {
+    width: 100%;
+  }
+
+  .industry-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .industry-logo {
+    margin-bottom: 10px;
+  }
+}

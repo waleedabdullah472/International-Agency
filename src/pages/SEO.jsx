@@ -14,6 +14,14 @@ import Seo12 from '../components/seo/Seo12';
 import Seo13 from '../components/seo/Seo13';
 import Seo14 from '../components/seo/Seo14';
 import Seo15 from '../components/seo/Seo15';
+import Seo16 from '../components/seo/Seo16'; 
+import Seo17 from '../components/seo/Seo17'; 
+import Seo18 from '../components/seo/Seo18'; 
+import Seo19 from '../components/seo/Seo19'; 
+import Seo20 from '../components/seo/Seo20'; 
+import Seo21 from '../components/seo/Seo21'; 
+import Seo22 from '../components/seo/Seo22'; 
+import Seo23 from '../components/seo/Seo23'; 
 
 const SEO = () => (
   <div>
@@ -32,6 +40,14 @@ const SEO = () => (
     <Seo13 />
     <Seo14 />
     <Seo15 />
+    <Seo16 /> 
+    <Seo17 /> 
+    <Seo18 /> 
+    <Seo19 /> 
+    <Seo20 /> 
+    <Seo21 /> 
+    <Seo22 /> 
+    <Seo23 /> 
   </div>
 );
 

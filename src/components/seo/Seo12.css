@@ -1,0 +1,200 @@
+.seo12-section {
+  background-color: #fff;
+  padding: 100px 20px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Headings */
+.seo12-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.seo12-subheading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Carousel container */
+.seo12-carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.seo12-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding: 20px 10px;
+  scrollbar-width: none; /* Firefox */
+  scroll-snap-type: x mandatory;
+}
+
+.seo12-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Card Design */
+.seo12-card {
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.seo12-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Partner Image */
+.seo12-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #666;
+  margin-bottom: 20px;
+}
+
+/* Feedback text */
+.seo12-feedback {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+/* Partner Name & Company */
+.seo12-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.seo12-company {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Star Rating */
+.seo12-stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.seo12-star {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:hover {
+  background: #666;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+/* Responsive Design - Cards per view */
+/* Large screens - 3 cards */
+@media (min-width: 1024px) {
+  .seo12-card {
+    width: calc((100% - 60px) / 3); /* 3 cards with gaps */
+    min-width: calc((100% - 60px) / 3);
+  }
+}
+
+/* Medium screens - 2 cards */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .seo12-card {
+    width: calc((100% - 30px) / 2); /* 2 cards with gap */
+    min-width: calc((100% - 30px) / 2);
+  }
+  
+  .seo12-carousel-container {
+    padding: 0 50px;
+  }
+}
+
+/* Small screens - 1 card */
+@media (max-width: 767px) {
+  .seo12-card {
+    width: 100%; /* 1 card full width */
+    min-width: 100%;
+  }
+  
+  .seo12-heading {
+    font-size: 2rem;
+  }
+
+  .seo12-subheading {
+    font-size: 1rem;
+  }
+
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .seo12-carousel-container {
+    padding: 0 40px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .seo12-carousel-container {
+    padding: 0 30px;
+  }
+  
+  .seo12-section {
+    padding: 80px 15px;
+  }
+}

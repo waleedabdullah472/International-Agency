@@ -1,0 +1,93 @@
+.seo11-section {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container */
+.seo11-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.seo11-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.seo11-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #666;
+  margin: 15px auto 0;
+  border-radius: 4px;
+}
+
+/* Content Area */
+.seo11-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left Side Text */
+.seo11-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.seo11-text p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Right Side Image */
+.seo11-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.seo11-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seo11-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seo11-text {
+    order: 2;
+  }
+
+  .seo11-image {
+    order: 1;
+    margin-bottom: 30px;
+  }
+
+  .seo11-heading {
+    font-size: 2rem;
+  }
+}

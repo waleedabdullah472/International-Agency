@@ -1,0 +1,104 @@
+/* === Main Section === */
+.seo20-section {
+  background-color: #fff;
+  color: #333;
+  padding: 30px 0;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.4s ease;
+}
+
+/* === Hover Effect on Whole Section === */
+.seo20-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* === Container === */
+.seo20-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+/* === Left Section === */
+.seo20-left {
+  flex: 1;
+}
+
+.seo20-left h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.seo20-left h2 span {
+  color: #666;
+}
+
+.seo20-left p {
+  color: #666;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* === Right Section === */
+.seo20-right {
+  flex: 1;
+}
+
+.seo20-right h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.seo20-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.seo20-buttons button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* === Button Hover === */
+.seo20-buttons button:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+  transform: translateY(-2px);
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .seo20-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seo20-right {
+    margin-top: 30px;
+  }
+
+  .seo20-buttons {
+    justify-content: center;
+  }
+
+  .seo20-left h2 {
+    font-size: 2rem;
+  }
+}

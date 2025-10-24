@@ -1,0 +1,100 @@
+/* === MAIN SECTION === */
+.seo16-section {
+  background: #ffffff;
+  padding: 30px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.seo16-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 60px;
+  padding: 0 20px;
+}
+.seo16-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+/* === LEFT SIDE === */
+.seo16-left h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 700;
+}
+
+.seo16-left p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 600px;
+}
+
+/* === RIGHT SIDE === */
+.seo16-right h3 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+.audit-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* === BUTTONS === */
+.audit-btn {
+  background: #fff;
+  color: #666;
+  border: 2px solid #333;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.audit-btn:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .seo16-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .seo16-right h3 {
+    margin-top: 40px;
+  }
+
+  .audit-buttons {
+    justify-content: center;
+  }
+
+  .seo16-left p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .seo16-left h2 {
+    font-size: 2rem;
+  }
+
+  .audit-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
