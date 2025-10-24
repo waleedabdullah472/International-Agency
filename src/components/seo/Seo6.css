@@ -1,0 +1,107 @@
+/* === Wrapper === */
+.seo6-wrapper {
+  padding: 80px 20px;
+  
+  font-family: "Poppins", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Intro Section === */
+.seo6-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.seo6-intro h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.seo6-intro p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* === Cards Grid === */
+.seo6-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* === Individual Card === */
+.seo6-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.seo6-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+/* Left Side (Logo) */
+.seo6-card-left {
+  flex: 0 0 80px;
+  margin-right: 20px;
+}
+
+.seo6-card-left img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Right Side (Text) */
+.seo6-card-right h3 {
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.seo6-card-right p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .seo6-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .seo6-intro h2 {
+    font-size: 2rem;
+  }
+
+  .seo6-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seo6-card-left {
+    margin: 0 auto 15px auto;
+  }
+
+  .seo6-card-left img {
+    width: 60px;
+    height: 60px;
+  }
+}
