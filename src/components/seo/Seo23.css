@@ -1,0 +1,162 @@
+/* Seo23.css */
+
+.seo-component-23 {
+  background: #fff;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  padding: 100px 80px;
+}
+
+.seo23-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ===== Left Side ===== */
+.seo23-left h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.seo23-left p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.seo23-left button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.seo23-left button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* ===== Right Side (Accordion) ===== */
+.seo23-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.faq-question span {
+  font-size: 26px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-question span {
+  color: #666;
+}
+
+/* The display and animation of the answer is handled by the React component 
+  conditionally rendering the .faq-answer div and the CSS animation. 
+  These properties inherently work across all screen sizes. 
+*/
+.faq-answer {
+  padding: 0 25px 20px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+  border-top: 1px solid #ddd;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Design (Tablet and Mobile Screens) ===== */
+@media (max-width: 992px) {
+  /* Adjusts the main component padding for smaller screens */
+  .seo-component-23 {
+    padding: 60px 40px; 
+  }
+
+  /* Changes the layout from two columns to a single column stack */
+  .seo23-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Centers the text content on the left side */
+  .seo23-left {
+    text-align: center;
+  }
+
+  /* Makes the button a block element and centers it */
+  .seo23-left button {
+    margin: 20px auto 0;
+    display: block;
+  }
+  
+  /* Optionally adjust padding for the FAQ items on very small screens */
+  .faq-question {
+    padding: 15px 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    padding: 0 20px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Optional: Additional media query for very small mobile screens */
+@media (max-width: 576px) {
+  .seo-component-23 {
+    padding: 40px 20px; 
+  }
+}

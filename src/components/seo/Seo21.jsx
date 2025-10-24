@@ -1,12 +1,42 @@
 import React from 'react';
-import './Seo21.css'; // <-- CSS Import for component 21
+import './Seo21.css';
 
 const Seo21 = () => {
+  // Example images — using same image repeated for layout
+  const images = [
+    './facebook.webp', './facebook.webp', './facebook.webp',
+    './facebook.webp', './facebook.webp', './facebook.webp', './facebook.webp',
+    './facebook.webp', './facebook.webp', './facebook.webp'
+  ];
+
   return (
-    <div className="seo-component-21"> {/* Added a class for styling */}
-      <h3>SEO Component 21</h3>
-      <p>This is the content for component 21.</p>
-    </div>
+    <section className="seo21-section">
+      <div className="seo21-container">
+
+        {/* LEFT SIDE */}
+        <div className="seo21-left">
+          <h2>Our Social Media Presence</h2>
+          <p>
+            We build meaningful connections across leading social platforms. 
+            Our team crafts engaging strategies to expand your online visibility 
+            and ensure your brand stays ahead of the competition.
+          </p>
+          <button>Learn More</button>
+        </div>
+
+        {/* RIGHT SIDE - Image Grid */}
+        <div className="seo21-right">
+          <div className="seo21-gallery">
+            {images.map((src, index) => (
+              <div className="seo21-image" key={index}>
+                <img src={src} alt={`social-${index}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
   );
 };
 
