@@ -25,7 +25,7 @@ SEO Services Agency</h3>
           {/* Right Content - Single Big Image (Moved to row 3 on mobile) */}
           <div className={styles.rightContent}>
             <div className={styles.singleImageContainer}>
-              <img src="./earoplane.png" alt="Social Media Management" className={styles.bigImage} />
+              <img src="./panda2.jpeg" alt="Social Media Management" className={styles.bigImage} />
             </div>
           </div>
 
