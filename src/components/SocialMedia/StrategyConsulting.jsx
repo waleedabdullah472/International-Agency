@@ -24,7 +24,7 @@ const StrategyConsulting = () => {
           {/* Right Content - Single Big Image (Moved to row 3 on mobile) */}
           <div className={styles.rightContent}>
             <div className={styles.singleImageContainer}>
-              <img src="./baby boy.png" alt="Social Media Management" className={styles.bigImage} />
+              <img src="./panda.jpeg" alt="Social Media Management" className={styles.bigImage} />
             </div>
           </div>
 
